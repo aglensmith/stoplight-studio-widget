@@ -1,25 +1,29 @@
-<!-- Stoplight Elements -->
-<link
-    rel="stylesheet"
-    href="https://raw.githubusercontent.com/aglensmith/stoplight-studio-widget/master/bundle.v1.css"
-    media="print"
-    onload="this.media='all'"
-/>
-<script async defer src="https://raw.githubusercontent.com/aglensmith/stoplight-studio-widget/master/bundle.v1.js" onload="__onElementsLoad()"></script> 
-<script>
-    function __onElementsLoad() {
-    // Let elements know where the Stoplight API is running
-    SL.config.host = 'https://stoplight.io/api';
+<head>
+    <!-- Stoplight Elements -->
 
-    // Emit the SL.ready event so that any code that needs SL can start using it
-    window.dispatchEvent(new Event('SL.ready'));
-    }
-</script> 
-<!-- End Stoplight Elements -->
+    <link
+        rel="stylesheet"
+        href="bundle.v1.css"
+        media="print"
+        onload="this.media='all'"
+    />
+    <script async defer src="bundle.v1.js" onload="__onElementsLoad()"></script> 
+    <script>
+        function __onElementsLoad() {
+        // Let elements know where the Stoplight API is running
+        SL.config.host = 'https://stoplight.io/api';
 
-<div id="stoplight-page"></div>
-<script>
-    window.addEventListener("SL.ready", function(e) {
-        SL.elements.page.render('page-container-element-id', 'gh/stoplightio/studio-demo/docs/introduction.md');
-    }, false);
-</script>
+        // Emit the SL.ready event so that any code that needs SL can start using it
+        window.dispatchEvent(new Event('SL.ready'));
+        }
+    </script> 
+    <!-- End Stoplight Elements -->
+</head> 
+<body>
+    <div id="stoplight-page"></div>
+    <script>
+        window.addEventListener("SL.ready", function(e) {
+            SL.elements.page.render('stoplight-page', 'gh/stoplightio/studio-demo/docs/introduction.md');
+        }, false);
+    </script>
+</body>
